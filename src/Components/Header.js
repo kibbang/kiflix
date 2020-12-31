@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
+import  logo  from "../asset/logo.png";
 import styled from "styled-components";
 
 const Header = styled.header`
@@ -36,9 +37,16 @@ const SLink = styled(Link)`
   justify-content: center;
 `;
 
+const Logo = styled.img`
+  width: 120px;
+  height: 50px;
+  padding-right: 10px;
+`;
+
 export default withRouter(({ location: { pathname } }) => (
   <Header>
     <List>
+      <SLink to="/"><Logo src={ logo } /></SLink>
       <Item current={pathname === "/"}>
         <SLink to="/">Movies</SLink>
       </Item>
